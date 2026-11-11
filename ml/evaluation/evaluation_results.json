@@ -1,0 +1,58 @@
+{
+  "model": "xgboost.XGBClassifier (xgboost 3.4.1)",
+  "trained_at": "2026-11-09T14:29:20.774094+00:00",
+  "dataset": {
+    "name": "PaySim (Kaggle ealaxi/paysim1)",
+    "licence": "CC BY-SA 4.0",
+    "nature": "simulated mobile-money transactions, not PayPal data",
+    "rows_used": 2770409,
+    "types_used": [
+      "TRANSFER",
+      "CASH_OUT"
+    ],
+    "excluded": "balance columns (label leakage), step as a feature (no real-clock mapping)"
+  },
+  "split": {
+    "train_steps": "1-400",
+    "validation_steps": "401-500",
+    "test_steps": "501-743"
+  },
+  "feature_columns": [
+    "log_amount",
+    "is_transfer",
+    "recipient_prior_count"
+  ],
+  "test_metrics": {
+    "test_rows": 124630,
+    "test_fraud_rows": 2652,
+    "test_fraud_prevalence": 0.021279,
+    "roc_auc": 0.9037,
+    "pr_auc": 0.5017,
+    "at_threshold_0_50": {
+      "threshold": 0.5,
+      "precision": 1.0,
+      "recall": 0.1422,
+      "f1": 0.2489,
+      "false_positive_rate": 0.0,
+      "confusion_matrix": {
+        "true_negatives": 121978,
+        "false_positives": 0,
+        "false_negatives": 2275,
+        "true_positives": 377
+      }
+    },
+    "at_validation_f1_threshold": {
+      "threshold": 0.0465,
+      "precision": 0.6196,
+      "recall": 0.3379,
+      "f1": 0.4373,
+      "false_positive_rate": 0.004509,
+      "confusion_matrix": {
+        "true_negatives": 121428,
+        "false_positives": 550,
+        "false_negatives": 1756,
+        "true_positives": 896
+      }
+    }
+  }
+}

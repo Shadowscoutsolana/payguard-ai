@@ -1,0 +1,248 @@
+{
+  "_metadata": {
+    "provenance_standard": "Every wallet and transfer carries a provenance label: 'synthetic' (invented for the demo) or 'real_public_chain' (fetched by scripts/fetch_pyusd_transfers.py, with real tx hashes). Nothing in this file is real on-chain activity.",
+    "address_scheme": "Synthetic addresses use the obvious pattern 0xde5a<group><zeros><index> so they cannot be mistaken for real wallets.",
+    "tx_hash_policy": "Synthetic transfers have tx_hash = null; we never invent realistic-looking hashes.",
+    "official_pyusd_ethereum_contract": "0x6c3ea9036406852006290770BEdFcAbA0e23A0e8",
+    "official_contract_sources": [
+      "https://docs.paxos.com/stablecoin/pyusd/pyusd-faq",
+      "https://www.paypal.com/us/cshelp/article/what-is-paypal-usd-pyusd-HELP1005"
+    ],
+    "detection_note": "Cluster labels below are for display/grouping only. Risk indicators are computed from the transfers by backend/app/blockchain_intelligence/cluster_detection.py."
+  },
+  "clusters": {
+    "clean_merchant": {
+      "cluster_id": "cluster_clean_001",
+      "description": "Demo merchant payout wallet receiving ordinary customer payments over several weeks",
+      "target_wallet": "0xde5a010000000000000000000000000000000001",
+      "wallets": [
+        {
+          "address": "0xde5a010000000000000000000000000000000001",
+          "label": "Demo merchant payout wallet (allowlisted)",
+          "provenance": "synthetic",
+          "allowlisted_merchant": true
+        },
+        {
+          "address": "0xde5a090000000000000000000000000000000001",
+          "label": "Demo customer wallet 1",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a090000000000000000000000000000000002",
+          "label": "Demo customer wallet 2",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a090000000000000000000000000000000003",
+          "label": "Demo customer wallet 3",
+          "provenance": "synthetic"
+        }
+      ],
+      "edges": [
+        {
+          "transfer_id": "SYN-MER-001",
+          "from": "0xde5a090000000000000000000000000000000001",
+          "to": "0xde5a010000000000000000000000000000000001",
+          "amount_pyusd": 45.0,
+          "timestamp": "2026-09-12T10:15:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-MER-002",
+          "from": "0xde5a090000000000000000000000000000000002",
+          "to": "0xde5a010000000000000000000000000000000001",
+          "amount_pyusd": 120.0,
+          "timestamp": "2026-09-30T16:40:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-MER-003",
+          "from": "0xde5a090000000000000000000000000000000003",
+          "to": "0xde5a010000000000000000000000000000000001",
+          "amount_pyusd": 60.0,
+          "timestamp": "2026-10-21T09:05:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        }
+      ]
+    },
+    "circular_ring": {
+      "cluster_id": "cluster_ring_904",
+      "description": "Demo 5-wallet circular PYUSD transfer loop completed within a few hours (layering pattern)",
+      "target_wallet": "0xde5a020000000000000000000000000000000001",
+      "wallets": [
+        {
+          "address": "0xde5a020000000000000000000000000000000001",
+          "label": "Payment recipient (demo)",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a020000000000000000000000000000000002",
+          "label": "Ring wallet 2",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a020000000000000000000000000000000003",
+          "label": "Ring wallet 3",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a020000000000000000000000000000000004",
+          "label": "Ring wallet 4",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a020000000000000000000000000000000005",
+          "label": "Ring wallet 5",
+          "provenance": "synthetic"
+        }
+      ],
+      "edges": [
+        {
+          "transfer_id": "SYN-RING-001",
+          "from": "0xde5a020000000000000000000000000000000001",
+          "to": "0xde5a020000000000000000000000000000000002",
+          "amount_pyusd": 4800.0,
+          "timestamp": "2026-10-28T01:10:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-RING-002",
+          "from": "0xde5a020000000000000000000000000000000002",
+          "to": "0xde5a020000000000000000000000000000000003",
+          "amount_pyusd": 4750.0,
+          "timestamp": "2026-10-28T02:05:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-RING-003",
+          "from": "0xde5a020000000000000000000000000000000003",
+          "to": "0xde5a020000000000000000000000000000000004",
+          "amount_pyusd": 4700.0,
+          "timestamp": "2026-10-28T03:20:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-RING-004",
+          "from": "0xde5a020000000000000000000000000000000004",
+          "to": "0xde5a020000000000000000000000000000000005",
+          "amount_pyusd": 4650.0,
+          "timestamp": "2026-10-28T04:45:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-RING-005",
+          "from": "0xde5a020000000000000000000000000000000005",
+          "to": "0xde5a020000000000000000000000000000000001",
+          "amount_pyusd": 4600.0,
+          "timestamp": "2026-10-28T05:40:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        }
+      ]
+    },
+    "fan_out_dispersion": {
+      "cluster_id": "cluster_fanout_402",
+      "description": "Demo wallet receiving one large deposit then splitting it across 4 wallets within 2 hours",
+      "target_wallet": "0xde5a030000000000000000000000000000000002",
+      "wallets": [
+        {
+          "address": "0xde5a030000000000000000000000000000000001",
+          "label": "Funding source (demo)",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a030000000000000000000000000000000002",
+          "label": "Payment recipient (demo)",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a030000000000000000000000000000000003",
+          "label": "Dispersion wallet 1",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a030000000000000000000000000000000004",
+          "label": "Dispersion wallet 2",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a030000000000000000000000000000000005",
+          "label": "Dispersion wallet 3",
+          "provenance": "synthetic"
+        },
+        {
+          "address": "0xde5a030000000000000000000000000000000006",
+          "label": "Dispersion wallet 4",
+          "provenance": "synthetic"
+        }
+      ],
+      "edges": [
+        {
+          "transfer_id": "SYN-FAN-001",
+          "from": "0xde5a030000000000000000000000000000000001",
+          "to": "0xde5a030000000000000000000000000000000002",
+          "amount_pyusd": 6000.0,
+          "timestamp": "2026-11-01T12:00:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-FAN-002",
+          "from": "0xde5a030000000000000000000000000000000002",
+          "to": "0xde5a030000000000000000000000000000000003",
+          "amount_pyusd": 1500.0,
+          "timestamp": "2026-11-01T12:20:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-FAN-003",
+          "from": "0xde5a030000000000000000000000000000000002",
+          "to": "0xde5a030000000000000000000000000000000004",
+          "amount_pyusd": 1500.0,
+          "timestamp": "2026-11-01T12:45:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-FAN-004",
+          "from": "0xde5a030000000000000000000000000000000002",
+          "to": "0xde5a030000000000000000000000000000000005",
+          "amount_pyusd": 1500.0,
+          "timestamp": "2026-11-01T13:10:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        },
+        {
+          "transfer_id": "SYN-FAN-005",
+          "from": "0xde5a030000000000000000000000000000000002",
+          "to": "0xde5a030000000000000000000000000000000006",
+          "amount_pyusd": 1500.0,
+          "timestamp": "2026-11-01T13:35:00Z",
+          "token": "PYUSD",
+          "tx_hash": null,
+          "provenance": "synthetic"
+        }
+      ]
+    }
+  }
+}

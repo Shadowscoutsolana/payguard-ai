@@ -1,0 +1,31 @@
+{
+  "_metadata": {
+    "provenance": "synthetic",
+    "purpose": "Seed payment history for the three demo personas so behavioural baselines exist before any live payment. Not real user data.",
+    "semantics": "Each entry is a past COMPLETED payment. The server combines these with real captured payments stored in payguard.db.",
+    "device_note": "device_id values are simulated labels, not real device fingerprints."
+  },
+  "senders": {
+    "user_buyer_01": [
+      {"amount": 42.0, "recipient_id": "merchant_tech_supplies", "device_id": "known_macbook_pro_01", "days_ago": 41},
+      {"amount": 55.0, "recipient_id": "merchant_tech_supplies", "device_id": "known_macbook_pro_01", "days_ago": 30},
+      {"amount": 48.0, "recipient_id": "coffee_roasters_co", "device_id": "known_macbook_pro_01", "days_ago": 18},
+      {"amount": 60.0, "recipient_id": "merchant_tech_supplies", "device_id": "known_macbook_pro_01", "days_ago": 9},
+      {"amount": 45.0, "recipient_id": "coffee_roasters_co", "device_id": "known_macbook_pro_01", "days_ago": 3}
+    ],
+    "user_buyer_02": [
+      {"amount": 75.0, "recipient_id": "grocery_mart", "device_id": "trusted_iphone_15", "days_ago": 50},
+      {"amount": 85.0, "recipient_id": "streaming_service", "device_id": "trusted_iphone_15", "days_ago": 35},
+      {"amount": 80.0, "recipient_id": "grocery_mart", "device_id": "trusted_iphone_15", "days_ago": 21},
+      {"amount": 70.0, "recipient_id": "book_store_online", "device_id": "trusted_iphone_15", "days_ago": 12},
+      {"amount": 90.0, "recipient_id": "grocery_mart", "device_id": "trusted_iphone_15", "days_ago": 4}
+    ],
+    "user_buyer_03": [
+      {"amount": 110.0, "recipient_id": "utility_company", "device_id": "office_desktop_win", "days_ago": 60},
+      {"amount": 130.0, "recipient_id": "office_supplies_co", "device_id": "office_desktop_win", "days_ago": 44},
+      {"amount": 120.0, "recipient_id": "utility_company", "device_id": "office_desktop_win", "days_ago": 29},
+      {"amount": 125.0, "recipient_id": "office_supplies_co", "device_id": "office_desktop_win", "days_ago": 15},
+      {"amount": 115.0, "recipient_id": "utility_company", "device_id": "office_desktop_win", "days_ago": 6}
+    ]
+  }
+}
